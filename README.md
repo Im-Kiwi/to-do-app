@@ -35,10 +35,12 @@
 - Also you need to create a realtime database in firebase and use the api endpoints to connect the database with app.
 - To use the key and then endpoints, all you have to do is to create a `.env` file and inside that you have to mention the below:
 
+```javascript
 REACT_APP_FIREBASE_KEY = `your api key`
 REACT_APP_SIGN_IN_URL = https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?
 REACT_APP_SIGN_UP_URL = https://identitytoolkit.googleapis.com/v1/accounts:signUp?
 REACT_APP_SEND_REQ_TO_DB = `your realtime database url`
 REACT_APP_DELETE_ACC_URL = https://identitytoolkit.googleapis.com/v1/accounts:delete
+```
 
 - Some url's are already mentioned above as it is common for all.
