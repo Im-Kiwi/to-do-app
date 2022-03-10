@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+## PREVIEW THE PROJECT [**HERE**]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## INTRODUCTION
 
-In the project directory, you can run:
+- To do app helps you to create tasks which you want to do on that day or in the upcoming days
+- This app will help to make you stay organized
 
-### `npm start`
+## ABOUT THIS APP
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- This app includes calendar which will help you to pick whatever day you want to create your task.
+- There is also a feature of creating labels for your task so that you can categorize your task with labels.
+- There is an inbox feature consisting of all your tasks (old, new tasks).
+- All your progress will be saved and your can check back anytime.
+- Authentication feature is added into this app so that user can enjoy the feature once he/she gets authenticated.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## TOOLS USED TO MAKE THIS PROJECT
 
-### `npm test`
+- This app is made with the help of react library
+- For the backend, firebase backend server is used with API endpoints
+- Material-ui, React-bootstrap, Bootstrap frameworks are used for styling and transitioning
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## HOW TO RUN THIS PROJECT
 
-### `npm run build`
+- If you want to run this project in your system then you need to download by clicking on the green "code" button or create a clone using `git clone` command from your terminal.
+- Once you cloned or downloaded successfully, extract the zip file (if u chose the download option) and then go to the terminal reach to your project directory and type `npm install`, this will install all the resources or helping libraries which will help to run this project.
+- If your cloned the project then type `npm install` directly.
+- After that type `npm start` in your terminal to run this project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## IMPORTANT NOTE
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Well as firebase backend server is used, so you need to create an account in the [**firebase**](https://firebase.google.com/).
+- Then you generate an api key which then can we used in the app.
+- Also you need to create a realtime database in firebase and use the api endpoints to connect the database with app.
+- To use the key and then endpoints, all you have to do is to create a `.env` file and inside that you have to mention the below:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+REACT_APP_FIREBASE_KEY = `your api key`
+REACT_APP_SIGN_IN_URL = https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?
+REACT_APP_SIGN_UP_URL = https://identitytoolkit.googleapis.com/v1/accounts:signUp?
+REACT_APP_SEND_REQ_TO_DB = `your realtime database url`
+REACT_APP_DELETE_ACC_URL = https://identitytoolkit.googleapis.com/v1/accounts:delete
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Some url's are already mentioned above as it is common for all.
