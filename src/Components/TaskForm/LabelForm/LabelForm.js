@@ -8,6 +8,8 @@ import { v4 as uniqueId } from 'uuid'
 // ------------ importing from other files -------------------
 import { allTasksAction } from '../../../Store/Reducers/allTasks'
 import classes from './LabelForm.module.css'
+import useModal from '../../../hooks/useModal'
+import { errorFlag } from '../../../Identifiers/identifiers'
 
 
 const LabelForm = () => {
@@ -17,6 +19,8 @@ const LabelForm = () => {
     const smBreakPoint = useMediaQuery('(max-width : 410px)')   // setting a breakpoing for responsiveness
 
     const [anchorEl, setAnchorEl] = useState(null) // to control the popup menu
+
+    const [ , modalShowHandler, ] = useModal(errorFlag) // to show no network error modal
 
     const currentLabel = useSelector(state => state.allTasks.currentLabel)
     const totalLabels = useSelector(state => state.allTasks.totalLabels)
@@ -45,7 +49,11 @@ const LabelForm = () => {
         const findLabel = totalLabels.findIndex(label => label.name === currentLabel)
 
         if (currentLabel.length !== 0 && findLabel) {
-            await axios.post(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/labels-${userId}.json`, sendLabel)
+            try {
+                await axios.post(`${process.env.REAT_APP_SEND_REQ_TO_DB}/labels-${userId}.json`, sendLabel)
+            } catch(err) {
+                modalShowHandler()
+            }
             setAnchorEl(null)
             dispatch(allTasksAction.updateShowLabel(false))
             dispatch(allTasksAction.updateIsDone(true))
@@ -67,15 +75,11 @@ const LabelForm = () => {
 
     // to delete label from the label list
     const deleteLabelListHandler = (id) => {
-        try {
-            console.log('hello')
-            axios.delete(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/labels-${userId}/${id}.json`)
-                .then(() => {
-                    dispatch(allTasksAction.updateIsDone(true))
-                })
-        } catch (err) {
-            console.log(err)
-        }
+    
+        axios.delete(`${process.env.REAT_APP_SEND_REQ_TO_DB}/labels-${userId}/${id}.json`)
+            .then(() => {
+                dispatch(allTasksAction.updateIsDone(true))
+            }).catch(() => modalShowHandler())        
     }
 
     return (

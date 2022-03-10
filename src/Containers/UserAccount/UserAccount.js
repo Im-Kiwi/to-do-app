@@ -98,7 +98,7 @@ const UserAccount = () => {
                 let isUserName = []
 
                 try {
-                    const findUser = await axios.get(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/users.json?orderBy="userName"&equalTo="${userName}"`)
+                    const findUser = await axios.get(`${process.env.REACT_APP_SEND_REQ_TO_DB}/users.json?orderBy="userName"&equalTo="${userName}"`)
                     isUserName = Object.keys(findUser.data)
                 } catch(err) {
                     console.log('error, unable to validate the user name')
@@ -119,14 +119,14 @@ const UserAccount = () => {
                 }
         }
     }
-
+    console.log(process.env)
     // signing up
     useEffect(() => {
         if (validMode && !isSignIn) {
             if ( !isEmailInvalid && !isPassInvalid && isPassMatch && isUserNameExist === notExist ) {
                 (async () => {
-                    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.FIREBASE_KEY}`
-                    const second_url = 'https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/users.json'                    
+                    const url = `${process.env.REACT_APP_SIGN_UP_URL}key=${process.env.REACT_APP_FIREBASE_KEY}`
+                    const second_url = `${process.env.REACT_APP_SEND_REQ_TO_DB}/users.json`                   
                     const response = await fetchHandler(url, second_url)
                     
                     if (response) {                                                                     
@@ -146,7 +146,7 @@ const UserAccount = () => {
             }
         } else if (validMode && isSignIn && emailAddress.length > 0 && password.length > 0) {
             (async () => {
-                const url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.FIREBASE_KEY}`
+                const url = `${process.env.REACT_APP_SIGN_IN_URL}key=${process.env.REACT_APP_FIREBASE_KEY}`
                 const response = await fetchHandler(url)                
                 // reseting the email and password and closing modal too
                 dispatch(formActions.changeEmail(''))
@@ -158,7 +158,7 @@ const UserAccount = () => {
                     dispatch(errorActions.updateWrongCeredentials(false))
                     dispatch(errorActions.updateNoNetwork(false))
                     //retrieving the username from the database
-                    const secondURL = `https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/users.json?orderBy="userId"&equalTo="${response.localId}"`
+                    const secondURL = `${process.env.REACT_APP_SEND_REQ_TO_DB}/users.json?orderBy="userId"&equalTo="${response.localId}"`
                     try {
                         const getUserName = await axios.get(secondURL)
                         const responseKey = Object.keys(getUserName.data)                        

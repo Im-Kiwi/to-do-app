@@ -24,7 +24,7 @@ const useMethods = () => {
      // method to delete a task
     const deleteTaskHandler = (task) => {
         const taskId = task.id
-        axios.delete(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}/${taskId}.json`)
+        axios.delete(`${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}/${taskId}.json`)
             .then(() => {  
                 dispatch(allTasksAction.updateIsDone(true))    
             }).catch(() => {
@@ -39,13 +39,13 @@ const useMethods = () => {
         const taskIndex = showTasks.findIndex(item => item.id === taskId) // finding task's index which is going to update
         if (isPending) {
             dispatch(allTasksAction.updateTask({isPending : false, id : taskIndex}))
-            axios.put(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}/${taskId}/isPending.json`, 'false')
+            axios.put(`${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}/${taskId}/isPending.json`, 'false')
                 .then().catch(() => {
                     modalShowHandler()
                 })
         } else {
             dispatch(allTasksAction.updateTask({isPending : true, id : taskIndex}))
-            axios.put(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}/${taskId}/isPending.json`, 'true')
+            axios.put(`${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}/${taskId}/isPending.json`, 'true')
                 .then().catch(() => {
                     modalShowHandler()
                 })
@@ -70,7 +70,7 @@ const useMethods = () => {
             time : time,
             year : year,
         }
-        axios.put(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}/${taskId}.json`, updatedTask)
+        axios.put(`${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}/${taskId}.json`, updatedTask)
             .then(res => {
                 console.log('task forwarded')
                 dispatch(allTasksAction.updateIsDone(true))
@@ -82,7 +82,7 @@ const useMethods = () => {
     // this method is used to delete all tasks of specific day / clear all tasks
     const deleteEntireTasks = async (isHistory, isDay, tasksOfDay) => { 
         dispatch(loadingActions.updateDeleteLoading(true))
-        const url = `https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}`
+        const url = `${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}`
         const today = new Date(year, month, day).getTime()
         const nextDay = new Date(year, month, day + 1).getTime()
 

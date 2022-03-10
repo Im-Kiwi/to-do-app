@@ -69,13 +69,13 @@ const UserProfile = () => {
         }
         dispatch(loadingActions.updateDeleteLoading(true))
         const sendRequests = [
-            axios.delete(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/users/${userDataId}.json`),
-            axios.delete(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}.json`),  
-            axios.delete(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/labels-${userId}.json`)     
+            axios.delete(`${process.env.REACT_APP_SEND_REQ_TO_DB}/users/${userDataId}.json`),
+            axios.delete(`${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}.json`),  
+            axios.delete(`${process.env.REACT_APP_SEND_REQ_TO_DB}/labels-${userId}.json`)     
         ]
         
         await axios.all(sendRequests)
-        await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:delete?key=AIzaSyCRUNR-_upS19C88ASWZU8Hei0aQHUtm8E`, sendToken)
+        await axios.post(`${process.env.REACT_APP_DELETE_ACC_URL}?key=AIzaSyCRUNR-_upS19C88ASWZU8Hei0aQHUtm8E`, sendToken)
         // logging out at the end when user and its details are deleted
         logoutHandler()        
         modalCloseHandler()

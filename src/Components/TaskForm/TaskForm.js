@@ -77,13 +77,13 @@ const TaskForm = () => {
             }
             if (editTaskFlag) {
                 try {
-                    await axios.patch(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}/${editTaskId}.json`, updatedTask)
+                    await axios.patch(`${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}/${editTaskId}.json`, updatedTask)
                 } catch(err) {
                     modalShowHandler()
                 }
             } else {
                 try {
-                    await axios.post(`https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}.json`, tasks)
+                    await axios.post(`${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}.json`, tasks)
                 } catch(err) {
                     modalShowHandler()
                 }

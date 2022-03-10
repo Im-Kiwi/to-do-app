@@ -65,8 +65,8 @@ const Layout = () => {
         (async () => {
             dispatch(allTasksAction.updateIsDone(false))
             try {
-                const tasksURL = `https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/tasks-${userId}.json`
-                const labelURL = `https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/labels-${userId}.json`
+                const tasksURL = `${process.env.REACT_APP_SEND_REQ_TO_DB}/tasks-${userId}.json`
+                const labelURL = `${process.env.REACT_APP_SEND_REQ_TO_DB}/labels-${userId}.json`
                 const fetchTasks = axios.get(tasksURL)
                 const fetchLabels = axios.get(labelURL)
                 const sendRequests = await axios.all([fetchTasks, fetchLabels])
@@ -93,7 +93,7 @@ const Layout = () => {
 
         // fetching the log in user database id
         (async () => {
-            const url = `https://to-do-app-kiwi-default-rtdb.asia-southeast1.firebasedatabase.app/users.json`
+            const url = `${process.env.REACT_APP_SEND_REQ_TO_DB}/users.json`
             const response = await axios.get(url + `?orderBy="userName"&equalTo="${userName}"`)
             const userDataId = Object.keys(response.data)[0]
             dispatch(authActions.updateUserDataId(userDataId))
