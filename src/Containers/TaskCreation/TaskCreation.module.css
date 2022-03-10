@@ -1,0 +1,54 @@
+.taskContainer {
+  margin-top: 49px;
+}
+
+.showDate {
+  font-size: 1.8rem;
+  font-family: "Anton", sans-serif;
+}
+
+.taskCollection {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 340px;
+  max-width: 591px;
+  margin-top: 80px;
+}
+
+.tasks {
+  margin-left: 10px;
+}
+
+.listContainer {
+  padding: 0;
+}
+
+/* -------------------------- responsive --------------------------------- */
+@media (min-width: 300px) and (max-width: 400px) {
+  .showDate {
+    font-size: 1rem;
+    align-items: center;
+  }
+  .taskCollection {
+    width: 100%;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 550px) {
+  .showDate {
+    font-size: 1.3rem;
+    align-items: center;
+    font-family: "Anton", sans-serif;
+  }
+}
+
+@media (min-width: 551px) and (max-width: 991px) {
+  .taskCollection {
+  }
+}
+
+@media (max-width: 991px) {
+  .taskContainer {
+    margin-top: 0;
+  }
+}

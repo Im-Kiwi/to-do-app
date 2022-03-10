@@ -1,0 +1,34 @@
+.add,
+.cancel {
+  height: 30px;
+  border-radius: 0 !important;
+  max-width: 70px;
+}
+
+.add {
+  background-color: #f03658 !important;
+  max-width: 70px;
+  margin-bottom: 5px !important;
+}
+.add:hover,
+.cancel:hover {
+  transform: translate(0, -1px);
+}
+
+.cancel {
+  background-color: #1d2a30 !important;
+}
+
+.addTaskButton {
+  margin-top: 20px;
+  background: none;
+  border: none;
+}
+
+/* ------------------------- responsive -------------------------- */
+
+@media (min-width: 410px) {
+  .add {
+    margin-right: 5px !important;
+  }
+}

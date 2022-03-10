@@ -1,0 +1,96 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 15% 15% 15%;
+  text-align: center;
+}
+
+.gridContainer {
+  margin-right: 5%;
+}
+
+.gridItem {
+  font-size: 1rem;
+  padding: 10px;
+  font-family: "ZCOOL QingKe HuangYou", cursive;
+}
+
+.gridButton,
+.deadButton {
+  border: 0;
+  font-size: 1.4rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: 0.2s;
+  background: none;
+}
+
+.gridButton {
+  color: #3d405b;
+  font-weight: 400;
+}
+
+.deadButton {
+  color: #adb5bd;
+  font-weight: 300;
+}
+
+.activeButton {
+  outline: none;
+  background-color: #3d405b;
+  color: white;
+}
+
+.activeDay {
+  background-color: #f03658;
+  outline: none;
+  color: #ffffff;
+}
+
+.disableButton {
+  display: none;
+}
+
+.gridButton:hover {
+  background-color: #3d405b;
+  color: white;
+}
+
+.gridButton:focus {
+  outline: none;
+  border-radius: 50%;
+  background-color: #3d405b;
+  color: #ffffff;
+}
+
+/* ----------------------- responsive --------------------- */
+
+@media (min-width: 300px) and (max-width: 400px) {
+  .gridButton,
+  .deadButton {
+    width: auto;
+    height: auto;
+    font-size: 0.7rem;
+  }
+  .gridItem {
+    padding: 0;
+  }
+  .gridContainer {
+    grid-template-columns: auto auto auto auto auto auto auto;
+  }
+  .gridContainer {
+    margin-left: 3%;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 550px) {
+  .gridContainer {
+    margin-right: 7%;
+  }
+  .gridButton,
+  .deadButton {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}

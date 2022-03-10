@@ -1,0 +1,23 @@
+.extraCol {
+  width: 200px;
+}
+
+.toTop {
+  float: right !important;
+  position: fixed !important;
+  right: 40px !important;
+  bottom: 26px !important;
+  background-color: #036666 !important;
+}
+
+.toTop:hover {
+  background-color: #036666 !important;
+}
+
+/* ------------------ responsive ---------------------- */
+
+@media (max-width: 1200px) {
+  .extraCol {
+    display: none;
+  }
+}

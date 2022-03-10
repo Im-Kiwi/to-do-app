@@ -1,0 +1,41 @@
+.cardContainer {
+  margin: auto;
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+}
+
+.isSignUp {
+  font-size: 0.8rem;
+}
+
+.linkButton {
+  cursor: pointer;
+}
+
+.form {
+  margin: auto;
+}
+
+.input {
+  width: 30vh;
+}
+
+.enrollButton {
+  border-color: #6247aa !important;
+  color: #6247aa !important;
+  border-radius: 50px !important;
+  border: 2px solid !important;
+  margin: auto !important;
+  margin-top: 20px !important;
+}
+
+.enrollButton:hover {
+  border-color: #6247aa !important;
+  background: #dec9e9 !important;
+}
+
+.link {
+  text-decoration: none;
+  color: #6247aa !important;
+}

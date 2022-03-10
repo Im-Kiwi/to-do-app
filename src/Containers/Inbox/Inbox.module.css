@@ -1,0 +1,17 @@
+.accordionContainer {
+  margin: auto;
+  margin-top: 50px;
+}
+
+.rejectButton,
+.acceptButton {
+  border-radius: 0 !important;
+}
+
+.rejectButton {
+  background-color: #1d2a30 !important;
+}
+
+.acceptButton {
+  background-color: #f03658 !important;
+}

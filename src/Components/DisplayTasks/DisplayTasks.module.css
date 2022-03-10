@@ -1,0 +1,45 @@
+.textContainer {
+  overflow-wrap: break-word;
+}
+
+.checkbox {
+  color: #f03658 !important;
+}
+
+.text {
+  font-family: "EB Garamond", serif !important;
+  font-size: 1.2rem !important;
+}
+
+.hideButton {
+  display: none;
+}
+
+.strikeTask {
+  text-decoration: line-through;
+}
+
+.thirdCol {
+  position: relative;
+  bottom: 12px;
+}
+
+/* --------------------------- responsive -------------------------------- */
+
+@media (min-width: 320px) and (max-width: 500px) {
+  .thirdCol {
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 650px) {
+  .thirdCol {
+    margin-left: 35px;
+  }
+}
+
+@media (min-width: 501px) {
+  .thirdCol {
+    margin-left: 35px;
+  }
+}

@@ -1,0 +1,35 @@
+.appBar {
+  background-color: #f35381;
+}
+
+.logo {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #f03658;
+}
+
+.navLink {
+  font-size: 1.2rem;
+}
+
+.tab {
+  width: 150px;
+}
+
+.link:hover {
+  color: inherit;
+}
+
+.logInButton {
+  margin-right: 10px !important;
+}
+
+.signUpButton {
+  background-color: #f03658 !important;
+}
+
+.logInButton {
+  background-color: #1d2a30 !important;
+}
+
+/* ---------------------------- responsive ------------------------ */

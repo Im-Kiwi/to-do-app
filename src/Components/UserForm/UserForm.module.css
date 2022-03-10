@@ -1,0 +1,39 @@
+.cardContainer {
+  margin: auto;
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+}
+
+.isSignUp {
+  font-size: 0.8rem;
+}
+
+.linkButton {
+  cursor: pointer;
+}
+
+.form {
+  margin: auto;
+}
+
+.input {
+  width: 30vh;
+}
+
+.enrollButton {
+  background-color: #f03658 !important;
+  border-radius: 50px !important;
+  border: 3px solid #1d2a30 !important;
+  margin: auto !important;
+  margin-top: 20px !important;
+}
+
+.link {
+  text-decoration: none;
+  color: #6247aa !important;
+}
+
+.userSuccess {
+  color: #2b9348;
+}

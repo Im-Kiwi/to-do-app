@@ -1,0 +1,8 @@
+.label {
+  float: left;
+  margin-right: 5px !important;
+  margin-bottom: 5px !important;
+  background-color: #f03658 !important;
+  color: #f8f9fa !important;
+  max-width: 120px;
+}

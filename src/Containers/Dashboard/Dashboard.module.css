@@ -1,0 +1,37 @@
+.calendarIcon {
+  position: relative !important;
+  bottom: 22px;
+  background-color: #f03658 !important;
+}
+
+.row {
+  height: 650px;
+}
+
+.taskContainer {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-color: #6a5ea8;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 78%,
+    rgba(240, 54, 88, 1) 30%
+  );
+  margin-top: 80px;
+  width: 100%;
+}
+
+/* ------------------ responsive ----------------------- */
+
+@media (max-width: 991px) {
+  .calendarIcon {
+    right: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .calendarIcon {
+    right: 5px;
+  }
+}

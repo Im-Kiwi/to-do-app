@@ -1,0 +1,80 @@
+.calendarContainer {
+  overflow: hidden;
+}
+
+.YearAndMonths {
+  text-align: center;
+  color: #3d405b;
+  font-size: 1.8rem;
+  font-family: "Anton", sans-serif;
+}
+
+.weekContainer {
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 15% 15% 15%;
+  z-index: 100;
+  color: #3d405b;
+  margin-top: 58px !important;
+  margin-left: auto;
+}
+
+.weekContainer {
+  margin-right: 5%;
+}
+
+.week {
+  padding: 10px;
+  font-family: "Syne Mono", monospace;
+}
+
+.line {
+  width: 10px;
+  min-height: 5px;
+  border-radius: 10px;
+  background: red;
+  position: relative;
+  left: 33%;
+  bottom: 15px;
+}
+
+/* ------------------- responsive ----------------------- */
+
+@media (min-width: 300px) and (max-width: 400px) {
+  .weekContainer {
+    grid-template-columns: auto auto auto auto auto auto auto;
+  }
+  .week {
+    padding: 1px;
+    margin-top: 10px;
+    font-size: 0.6rem;
+  }
+  .YearAndMonths {
+    font-size: 0.9rem;
+    align-items: center;
+    font-family: "Anton", sans-serif;
+  }
+
+  .weekContainer {
+    margin-left: 3%;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 550px) {
+  .YearAndMonths {
+    font-size: 1.1rem;
+    align-items: center;
+    font-family: "Anton", sans-serif;
+  }
+  .week {
+    font-size: 0.7rem;
+  }
+  .weekContainer {
+    margin-right: 5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .calendarContainer {
+    margin-top: 49px;
+  }
+}

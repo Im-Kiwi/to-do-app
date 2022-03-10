@@ -1,0 +1,126 @@
+.rowContainer {
+  margin-top: 40px !important;
+  height: auto;
+}
+
+.secondCol {
+  position: relative;
+  top: 50px;
+}
+
+.thirdCol {
+  text-align: center;
+}
+
+.mainImage {
+  width: 100%;
+}
+
+.textContainer {
+  position: relative;
+  top: 25%;
+  text-align: center;
+}
+
+.getStarted {
+  background-color: #1d2a30 !important;
+  transition: 0.1s;
+  font-family: "Comfortaa", cursive !important;
+}
+
+.getStarted:hover {
+  transform: scale(1.1);
+}
+
+.headerOne,
+.headerTwo {
+  font-family: "Syne Mono", monospace !important;
+  font-weight: 700 !important;
+  color: #f03658;
+}
+
+.text {
+  font-family: "Teko", sans-serif !important;
+}
+
+.secondRowCont,
+.thirdRowCont,
+.fourthRowCont {
+  width: 100%;
+  margin: 0;
+  padding: 40px 0 40px 0;
+}
+
+.secondRowCont {
+  margin-top: 150px !important;
+  background-color: #1d2a30;
+}
+
+.calendarImage,
+.inboxImage {
+  max-width: 600px;
+  width: 100%;
+}
+
+.createLabelImage {
+  max-width: 450px;
+  width: 100%;
+}
+
+.fourthRowCont {
+  background-color: #f03658;
+}
+
+.footerContainer {
+  margin-bottom: -50px;
+  margin-top: 30px;
+}
+
+/* ------------------ responsive -------------------- */
+@media (max-width: 1045px) {
+  .headerOne {
+    font-size: 3.5rem !important;
+  }
+}
+
+@media (max-width: 1006px) {
+  .headerOne {
+    font-size: 3rem !important;
+  }
+  .headerTwo {
+    font-size: 2.8rem !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .headerOne {
+    font-size: 2.5rem !important;
+  }
+  .headerTwo {
+    font-size: 2.2rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .secondCol {
+    margin-bottom: 30px;
+  }
+
+  .mainImage {
+    width: 75%;
+    margin: auto;
+  }
+
+  .thirdCol {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 348px) {
+  .headerOne {
+    font-size: 2.1rem !important;
+  }
+  .headerTwo {
+    font-size: 1.8rem !important;
+  }
+}

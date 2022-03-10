@@ -1,0 +1,29 @@
+.logInLogo {
+  text-align: center !important;
+  margin-left: 20px;
+}
+
+.logInNavigation {
+  width: 200px;
+  z-index: 200;
+  position: fixed;
+  height: 100%;
+  background-color: #1d2a30;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.linkButton {
+  border-right: 4px solid #f03658 !important;
+}
+
+/* ------------ responsive -------------------- */
+
+@media (max-height: 565px) {
+  .logInNavigation {
+    overflow-y: auto;
+  }
+}
