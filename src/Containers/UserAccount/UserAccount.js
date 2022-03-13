@@ -119,7 +119,7 @@ const UserAccount = () => {
                 }
         }
     }
-    console.log(process.env)
+   
     // signing up
     useEffect(() => {
         if (validMode && !isSignIn) {
