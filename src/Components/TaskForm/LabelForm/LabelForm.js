@@ -50,7 +50,7 @@ const LabelForm = () => {
 
         if (currentLabel.length !== 0 && findLabel) {
             try {
-                await axios.post(`${process.env.REAT_APP_SEND_REQ_TO_DB}/labels-${userId}.json`, sendLabel)
+                await axios.post(`${process.env.REACT_APP_SEND_REQ_TO_DB}/labels-${userId}.json`, sendLabel)
             } catch(err) {
                 modalShowHandler()
             }
