@@ -76,7 +76,7 @@ const LabelForm = () => {
     // to delete label from the label list
     const deleteLabelListHandler = (id) => {
     
-        axios.delete(`${process.env.REAT_APP_SEND_REQ_TO_DB}/labels-${userId}/${id}.json`)
+        axios.delete(`${process.env.REACT_APP_SEND_REQ_TO_DB}/labels-${userId}/${id}.json`)
             .then(() => {
                 dispatch(allTasksAction.updateIsDone(true))
             }).catch(() => modalShowHandler())        
